@@ -31,4 +31,4 @@ if __name__ == "__main__":
     peso_maximo = 100
 
     valor_maximo = llenar_mochila(precios, pesos, peso_maximo)
-    print("Valor máximo que se puede obtener: ", valor_maximo)
+    print("Valor máximo que se puede obtener: ", valor_maximo, "peso maximo ", peso_maximo)

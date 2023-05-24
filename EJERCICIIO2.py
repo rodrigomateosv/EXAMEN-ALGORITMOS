@@ -28,3 +28,32 @@ stormtroopers = [
 for stormtrooper in stormtroopers:
     stormtrooper.calificacion()
     print()
+
+import unittest
+import sys
+
+
+
+import unittest
+import sys
+import io
+
+
+class TestStormtrooper(unittest.TestCase):
+    def test_calificacion(self):
+        st1 = Stormtrooper("FN-2187", "Soldado")
+
+        original_stdout = sys.stdout  # Guarda la salida stdout original
+        sys.stdout = buffer = io.StringIO()  # Redirecciona la salida stdout a buffer
+
+        st1.calificacion()
+
+        sys.stdout = original_stdout  # Restaura la salida stdout original
+        salida = buffer.getvalue()  # Extrae la cadena de la salida capturada
+        
+        self.assertEqual(salida.strip(), "FN-2187 es un miembro común de las tropas del Imperio Galáctico.")
+
+        # Aquí puedes agregar los otros casos de prueba
+
+if __name__ == '__main__':
+    unittest.main()
