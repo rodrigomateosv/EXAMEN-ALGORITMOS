@@ -64,6 +64,17 @@ def barrido(lista):
     while(aux is not None):
         print(aux.info)
         aux = aux.sig
+
+def get_elements(lista):
+    """Devuelve una lista de todos los elementos en la lista."""
+    elements = []
+    if lista is not None:
+        aux = lista.inicio
+        while aux is not None:
+            elements.append(aux.info)
+            aux = aux.sig
+    return elements
+
     
 
 def tamanio(lista):

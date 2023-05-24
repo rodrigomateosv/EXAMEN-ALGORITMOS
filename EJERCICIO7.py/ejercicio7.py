@@ -1,5 +1,5 @@
 import random
-from tda_lista import Lista, insertar, eliminar, busqueda, barrido
+from tda_lista import Lista, insertar, eliminar, busqueda, barrido, get_elements
 from tda_hash import crear_tabla, agregar_ta, quitar_ta, buscar_ta, hash_division, bernstein
 
 class Stormtrooper:
@@ -50,3 +50,33 @@ pos = buscar_ta(tabla2, hash_legion, fn_2187)
 if pos is not None:
     print('FN-2187 encontrado en la segunda tabla. Procediendo a eliminar.')
     quitar_ta(tabla2, hash_legion, fn_2187)
+
+# Misión de asalto: Stormtroopers terminados en 781
+print("\nMisión de asalto: Stormtroopers terminados en 781")
+for i in range(len(tabla1)):
+    for stormtrooper in get_elements(tabla1[i]):
+        if stormtrooper.code.endswith('781'):
+            print(stormtrooper)
+
+# Misión de exploración: Stormtroopers terminados en 537
+print("\nMisión de exploración: Stormtroopers terminados en 537")
+for i in range(len(tabla1)):
+    for stormtrooper in get_elements(tabla1[i]):
+        if stormtrooper.code.endswith('537'):
+            print(stormtrooper)
+
+# Misión de custodia a Darth Vader: Stormtroopers de la legión CT
+print("\nMisión de custodia a Darth Vader: Stormtroopers de la legión CT")
+for i in range(len(tabla2)):
+    for stormtrooper in get_elements(tabla2[i]):
+        if stormtrooper.legion == 'CT':
+            print(stormtrooper)
+
+# Misión de exterminación a Endor: Stormtroopers de la legión TF
+print("\nMisión de exterminación a Endor: Stormtroopers de la legión TF")
+for i in range(len(tabla2)):
+    for stormtrooper in get_elements(tabla2[i]):
+        if stormtrooper.legion == 'TF':
+            print(stormtrooper)
+
+
